@@ -74,7 +74,8 @@ body {
 .login-form {
   width: 100%;
   margin: 0;
-  display: grid;
+  padding: 0;
+  display: grid;as
   gap: 16px;
   min-height: 20rem;
 }
