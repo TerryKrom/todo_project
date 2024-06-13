@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+<body>
+
+    <div class="login-card">
+        <h2>Task List</h2>
+        <ul>
+            {% for task in tasks %}
+            <li id="task_{{ task.id }}">
+                <span>{{ task.title }}</span>
+                <!-- Adicione um link ou botão para remover a tarefa -->
+                <span><a href="#" onclick="removeTask('{{ task.id }}')">X</a></span>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'add_task' %}">Add Task</a>
+    </div>
+
+    <script>
+        function removeTask(taskId) {
+            // Faça uma solicitação AJAX para a função remove_tag
+            fetch('/remove_tag/' + taskId + '/')
+                .then(response => {
+                    if (response.ok) {
+                        // Atualize a interface do usuário ou faça qualquer outra ação necessária
+                        document.getElementById('task_' + taskId).remove();
+                    } else {
+                        console.error('Falha ao excluir a tarefa');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro na solicitação:', error);
+                });
+        }
+    </script>
+
+</body>
+</html>

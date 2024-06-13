@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Teachers", sans-serif
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  background-color: #203040;
+}
+
+@media (width >=500px) {
+  body {
+    padding: 0;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .login-card {
+    padding-top: 10px !important;
+  }
+}
+
+.login-card {
+  position: relative;
+  padding: 40px 30px 44px;
+  border-radius: 1.25rem;
+  background: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 30rem;
+ }
+
+@media (width >=500px) {
+  .login-card {
+    margin: 0;
+    width: 400px;
+  }
+}
+
+.login-card>h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: #203040;
+}
+
+
+.login-card > ul{
+    list-style: none;
+    min-height: 20rem;
+}
+
+.login-card > ul > li{
+   margin-top: 10px;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.login-form {
+  width: 100%;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+  min-height: 20rem;
+}
+
+.login-form input, .login-form textarea{
+  width: 100%;
+  height: 56px;
+}
+
+textarea{
+    padding: 10px
+}
+
+.login-form input {
+  border: 2px solid #505050;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 0 16px;
+  outline: 0;
+  border-radius: 0.5rem;
+}
+
+.title-div, .description-div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
